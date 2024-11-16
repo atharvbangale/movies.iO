@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.auth-form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+button {
+    @apply bg-red-500 text-white font-bold py-2 px-6 rounded-lg w-full transition duration-300 ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button:hover {
+    @apply bg-red-700;
 }
 
-.App-link {
-  color: #61dafb;
+.link-btn {
+    @apply text-blue-600 mt-4 text-center block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.link-btn:hover {
+    @apply text-blue-800;
 }
+
+input[type="email"], input[type="password"], input[type="text"] {
+    @apply w-full px-4 py-2 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 mb-4;
+}
+
+
+nav {
+    @apply bg-red-700 text-white p-4 rounded-b-full shadow-xl shadow-slate-400;
+}
+
+nav a {
+    @apply text-white font-semibold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    @apply text-gray-200;
+}
+
+
+.sidebar {
+    @apply bg-white text-black p-6 border-r border-black transition-all;
+}
+
+.sidebar input[type="text"] {
+    @apply px-4 py-2 w-full max-w-xs text-black border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 mb-4;
+}
+
+.sidebar button {
+    @apply flex items-start gap-2 bg-red-500 hover:bg-white hover:text-black text-white font-bold py-2 px-14 rounded border-separate;
+}
+
+.sidebar ul {
+    @apply space-y-4 py-5;
+}
+
+.sidebar a {
+    @apply block text-lg hover:text-gray-300 transition duration-300;
+}
+
+.sidebar .profile-btn {
+    @apply flex items-center space-x-4 -my-32 bg-red-500 hover:bg-white hover:text-black text-white font-bold py-5 px-14 rounded-lg;
+}
+
+.sidebar .profile-btn img {
+    @apply w-8 h-8 rounded-full transition duration-300 ease-in-out hover:filter hover:invert;
+}
+
+.sidebar .profile-btn span {
+    @apply ml-4;
+}
+
+.sidebar .hamburger-btn {
+    @apply lg:hidden p-4 bg-blue-600 text-white fixed top-4 left-4 z-50 rounded-full;
+}
+
+
+.sidebar-hidden {
+    display: none;
+}
+
+.sidebar-visible {
+    display: block;
+}
+
+
+.main-content {
+    @apply flex-1 p-10 bg-white ml-64;
+}
+
+.main-content h1 {
+    @apply text-3xl font-semibold text-gray-800;
+}
+
+.main-content p {
+    @apply text-gray-600 mt-4;
+}
+
+h2 {
+    @apply text-2xl font-bold text-center mb-4;
+}
+
+h2, label {
+    @apply text-gray-800;
+}
+
+h2 {
+    @apply mb-4;
+}
+
